@@ -6,7 +6,8 @@
         {
             "type": "shell",
             "label": "Laravel: Serve app",
-            "command": "php artisan serve"
+            "command": "php artisan serve",
+            "problemMatcher": []
         }
     ]
 }
