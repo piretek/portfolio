@@ -17,8 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/portfolio', 'PortfolioController@websites')->name('portfolio.index');
 
-Auth::routes();
+Route::get('/portfolio/create', 'PortfolioController@create')->name('portfolio.create');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/portfolio/{website}', 'PortfolioController@website')->name('portfolio.show');
+
+Route::post('/portfolio', 'PortfolioController@store')->name('portfolio.store');
+
+Route::delete('/portfolio/{website}', 'PortfolioController@destroy')->name('portfolio.destroy');

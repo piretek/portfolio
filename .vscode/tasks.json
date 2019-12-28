@@ -8,6 +8,11 @@
             "label": "Laravel: Serve app",
             "command": "php artisan serve",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "dev",
+            "problemMatcher": []
         }
     ]
 }
