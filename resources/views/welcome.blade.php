@@ -16,9 +16,9 @@
     <body>
         <div class="wrapper">
             <div class="header">
-                <div class="avatar" style="background-image: url('/images/me.jpg');"></div>
+                <div class="avatar" style="background-image: url('/images/me.jpg')"></div>
                 <div class="title">Piotr Czarnecki</div>
-                <div class="sub-title">I'm a sweet programmer :)</div>
+                <div class="sub-title">Nie wiem... :)</div>
             </div>
             <div class="content">
                 <div></div>
