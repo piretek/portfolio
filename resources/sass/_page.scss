@@ -1,0 +1,93 @@
+@import 'for-all';
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 150px;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    padding: 25px;
+
+    .avatar {
+        border-radius: 100px;
+        @include image-in-bg;
+        margin: 15px;
+        width: 125px;
+        height: 125px;
+        box-shadow: 0 0 20px 0px #2D2D2D;
+    }
+
+    .title, .sub-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .title {
+        font-weight: 900;
+        font-size: 3em;
+        letter-spacing: 2px;
+    }
+
+    .sub-title {
+        font-weight: 200;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+    }
+}
+
+$dot-size: 24px;
+
+.timeline {
+    margin-top: 50px;
+    width: 100%;
+    position: relative;
+
+    .timeline__element {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: calc(100% - 10px);
+
+        &--info {
+            width: calc(50% - 24px);
+            padding: 10px 50px;
+        }
+
+        &--spacer {
+            width: calc(50% - 24px);
+            height: 300px;
+            @include image-in-bg;
+            background-clip: content-box;
+            background-size: contain !important;
+            padding: 0 50px;
+        }
+
+        &--dot {
+            background-image: url('/images/Dot.svg');
+            top: calc(50% - 12px);
+            height: $dot-size;
+            width: $dot-size;
+            @include image-in-bg;
+            position:relative;
+            z-index: 1000
+        }
+
+        &--connector {
+            position: absolute;
+            height: 100%;
+            width: 5px;
+            background-color: #A7616E;
+            left: calc(50% - 15px);
+            top: 50%;
+            z-index: 10;
+        }
+
+    }
+}

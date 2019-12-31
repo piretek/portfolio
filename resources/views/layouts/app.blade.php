@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app-admin.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
