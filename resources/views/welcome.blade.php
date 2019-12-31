@@ -21,7 +21,36 @@
                 <div class="sub-title">I'm a sweet programmer :)</div>
             </div>
             <div class="content">
-                <div></div>
+                <div class="timeline">
+
+                    @foreach($websites as $website)
+                        <div class="timeline__element">
+                            @if($loop->even)
+                                <div class="timeline__element--info">
+                                    <h1>{{ $website->title }}</h1>
+                                    <p>{{ $website->desc }}</p>
+                                </div>
+                            @else
+                                <div class="timeline__element--spacer" style="background-image: url(/storage/{{ $website->screenshot }});"></div>
+                            @endif
+
+                            <div class="timeline__element--dot"></div>
+
+                            @if(!$loop->last)
+                                <div class="timeline__element--connector"></div>
+                            @endif
+
+                            @if($loop->even)
+                                <div class="timeline__element--spacer" style="background-image: url(/storage/{{ $website->screenshot }});"></div>
+                            @else
+                                <div class="timeline__element--info">
+                                    <h1>{{ $website->title }}</h1>
+                                    <p>{{ $website->desc }}</p>
+                                </div>
+                            @endif
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </body>
