@@ -13,6 +13,11 @@
             "type": "npm",
             "script": "dev",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "watch",
+            "problemMatcher": []
         }
     ]
 }

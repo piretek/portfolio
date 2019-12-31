@@ -13,11 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="mb-2 col-md-12 pl-0 pr-0">
-                        <button type="submit" class="btn btn-primary"> {{ __('Update') }} </button>
-                        <a href="{{ route('portfolio.index') }}"><button type="button" class="btn btn-light"> {{ __('Back') }} </button></a>
-                    </div>
-                    <div class="card">
+                    <div class="card mb-4">
                         <div class="website_card">
                             <div class="image" style="background-image: url('{{ asset("/storage/".$website->screenshot) }}');"></div>
                             <div class="other_info">
@@ -27,6 +23,10 @@
                             </div>
                         </div>
                     </div>
+                    <div class="offset-md-2 col-md-10">
+                        <h2>Edit website</h2>
+                    </div>
+                    @include('management.websites.form', ['edit' => true])
                 </div>
             </div>
         </div>

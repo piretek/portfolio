@@ -14,17 +14,7 @@
                         </div>
                     @endif
 
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="portfolio">Strony</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ust-portfolio">Ust. portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="uzytkownicy">Użytkownicy</a>
-                        </li>
-                    </ul>
+                    @include('management.nav')
 
                     <div class="button-section">
                         <a href="{{ route("portfolio.create") }}">

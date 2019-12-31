@@ -23,6 +23,8 @@ Route::get('/portfolio/create', 'PortfolioController@create')->name('portfolio.c
 
 Route::get('/portfolio/{website}', 'PortfolioController@website')->name('portfolio.show');
 
+Route::put('/portfolio/{website}', 'PortfolioController@modify')->name('portfolio.edit');
+
 Route::post('/portfolio', 'PortfolioController@store')->name('portfolio.store');
 
 Route::delete('/portfolio/{website}', 'PortfolioController@destroy')->name('portfolio.destroy');
