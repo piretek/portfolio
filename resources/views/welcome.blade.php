@@ -15,47 +15,43 @@
     </head>
     <body>
         <div class="wrapper">
-            <div class="header">
-                <div class="avatar" style="background-image: url('/images/me.jpg')"></div>
-                <div class="title">Piotr Czarnecki</div>
-                <div class="sub-title">Nie wiem... :)</div>
-            </div>
-            <div class="content">
-                <div class="timeline">
-
-                    @foreach($websites as $website)
-                        <div class="timeline__element">
-                            @if($loop->even)
-                                <div class="timeline__element--info">
-                                    <h1>{{ $website->title }}</h1>
-                                    <p>{{ $website->desc }}</p>
-                                </div>
-                            @else
-                                <div class="timeline__element--image">
-                                    <div class="screenshot" style="background-image: url(/storage/{{ $website->screenshot }});"></div>
-                                </div>
-                            @endif
-
-                            <div class="timeline__element--dot"></div>
-
-                            @if(!$loop->last)
-                                <div class="timeline__element--connector"></div>
-                            @endif
-
-                            @if($loop->even)
-                                <div class="timeline__element--image">
-                                    <div class="screenshot" style="background-image: url(/storage/{{ $website->screenshot }});"></div>
-                                </div>
-                            @else
-                                <div class="timeline__element--info">
-                                    <h1>{{ $website->title }}</h1>
-                                    <p>{{ $website->desc }}</p>
-                                </div>
-                            @endif
-                        </div>
-                    @endforeach
+            <header>
+                <div class="header">
+                    <div class="avatar" style="background-image: url('/images/me.jpg')"></div>
+                    <div class="title">{{ $title }}</div>
+                    <div class="sub-title">{{ $subtitle }}</div>
                 </div>
-            </div>
+            <header>
+            <main>
+                <div class="content">
+                    <div class="timeline">
+
+                        @foreach($websites as $website)
+                            <div class="timeline__element">
+                                <div class="timeline__element--image">
+                                    <div class="screenshot" style="background-image: url(/storage/{{ $website->screenshot }});"></div>
+                                </div>
+
+                                <div class="timeline__element--dot"></div>
+
+                                @if(!$loop->last)
+                                    <div class="timeline__element--connector"></div>
+                                @endif
+
+                                <div class="timeline__element--info">
+                                    <h1>{{ $website->title }}</h1>
+                                    <p>{{ $website->desc }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class="footer">
+
+                </div>
+            </footer>
         </div>
     </body>
 </html>

@@ -60,7 +60,7 @@ class PortfolioController extends Controller
             'screenshot' => $ssPath,
         ]);
 
-        session()->flash('status', 'Created successfully');
+        session()->flash('status', __('Created successfully') );
 
         return redirect( route('portfolio.show', ['website' => $created_website->id]) );
     }
@@ -91,7 +91,7 @@ class PortfolioController extends Controller
 
         $website->save();
 
-        session()->flash('status', 'Updated successfully');
+        session()->flash('status', __('Updated successfully') );
 
         return redirect( route('portfolio.show', ['website' => $website->id]) );
     }
@@ -102,7 +102,7 @@ class PortfolioController extends Controller
 
         $website->delete();
 
-        session()->flash('status', 'Deleted successfully');
+        session()->flash('status', __('Deleted successfully') );
 
         return redirect( route( 'portfolio.index' ) );
     }

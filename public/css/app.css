@@ -11437,15 +11437,29 @@ body {
   width: calc(100% - 10px);
 }
 
+.timeline .timeline__element:nth-child(even) .timeline__element--info {
+  -webkit-box-ordinal-group: 2;
+          order: 1;
+}
+
+.timeline .timeline__element:nth-child(even) .timeline__element--image {
+  -webkit-box-ordinal-group: 5;
+          order: 4;
+}
+
 .timeline .timeline__element--info {
   width: calc(50% - 24px);
   padding: 10px 50px;
+  -webkit-box-ordinal-group: 5;
+          order: 4;
 }
 
 .timeline .timeline__element--image {
   width: calc(50% - 24px);
   height: 300px;
   padding: 0 50px;
+  -webkit-box-ordinal-group: 2;
+          order: 1;
 }
 
 .timeline .timeline__element--image .screenshot {
@@ -11467,6 +11481,8 @@ body {
   background-repeat: no-repeat;
   position: relative;
   z-index: 1000;
+  -webkit-box-ordinal-group: 3;
+          order: 2;
 }
 
 .timeline .timeline__element--connector {
@@ -11477,5 +11493,7 @@ body {
   left: calc(50% - 15px);
   top: 50%;
   z-index: 10;
+  -webkit-box-ordinal-group: 4;
+          order: 3;
 }
 

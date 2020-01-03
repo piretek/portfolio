@@ -55,15 +55,28 @@ $dot-size: 24px;
         position: relative;
         width: calc(100% - 10px);
 
+        &:nth-child(even) {
+
+            .timeline__element--info {
+                order: 1;
+            }
+
+            .timeline__element--image {
+                order: 4;
+            }
+        }
+
         &--info {
             width: calc(50% - 24px);
             padding: 10px 50px;
+            order: 4;
         }
 
         &--image {
             width: calc(50% - 24px);
             height: 300px;
             padding: 0 50px;
+            order: 1;
 
             .screenshot {
                 width: 447px;
@@ -81,6 +94,7 @@ $dot-size: 24px;
             @include image-in-bg;
             position: relative;
             z-index: 1000;
+            order: 2;
         }
 
         &--connector {
@@ -91,6 +105,7 @@ $dot-size: 24px;
             left: calc(50% - 15px);
             top: 50%;
             z-index: 10;
+            order: 3;
         }
 
     }
