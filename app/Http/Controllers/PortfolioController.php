@@ -96,9 +96,11 @@ class PortfolioController extends Controller
         return redirect( route('portfolio.show', ['website' => $website->id]) );
     }
 
-    public function destroy($website) {
+    public function destroy( Website $website) {
 
-        Website::findOrFail($website)->delete();
+        Storage::delete($website->screenshot);
+
+        $website->delete();
 
         session()->flash('status', 'Deleted successfully');
 
