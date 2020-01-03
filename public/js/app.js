@@ -49624,9 +49624,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! H:\Pliki\Pulpit\Projekty\piretek\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! H:\Pliki\Pulpit\Projekty\piretek\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! H:\Pliki\Pulpit\Projekty\piretek\resources\sass\app-admin.scss */"./resources/sass/app-admin.scss");
+__webpack_require__(/*! d:\Pliki\Pulpit\Projekty\piretek\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! d:\Pliki\Pulpit\Projekty\piretek\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! d:\Pliki\Pulpit\Projekty\piretek\resources\sass\app-admin.scss */"./resources/sass/app-admin.scss");
 
 
 /***/ })

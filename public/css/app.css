@@ -11442,15 +11442,19 @@ body {
   padding: 10px 50px;
 }
 
-.timeline .timeline__element--spacer {
+.timeline .timeline__element--image {
   width: calc(50% - 24px);
   height: 300px;
+  padding: 0 50px;
+}
+
+.timeline .timeline__element--image .screenshot {
+  width: 447px;
+  height: 251px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-clip: content-box;
-  background-size: contain !important;
-  padding: 0 50px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .timeline .timeline__element--dot {

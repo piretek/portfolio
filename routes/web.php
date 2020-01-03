@@ -26,3 +26,7 @@ Route::put('/portfolio/{website}', 'PortfolioController@modify')->name('portfoli
 Route::post('/portfolio', 'PortfolioController@store')->name('portfolio.store');
 
 Route::delete('/portfolio/{website}', 'PortfolioController@destroy')->name('portfolio.destroy');
+
+// Prof. settings
+
+Route::get('/ust-portfolio', 'PortfolioSettingsController@index')->name('settings-portfolio.index');

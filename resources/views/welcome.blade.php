@@ -31,7 +31,9 @@
                                     <p>{{ $website->desc }}</p>
                                 </div>
                             @else
-                                <div class="timeline__element--spacer" style="background-image: url(/storage/{{ $website->screenshot }});"></div>
+                                <div class="timeline__element--image">
+                                    <div class="screenshot" style="background-image: url(/storage/{{ $website->screenshot }});"></div>
+                                </div>
                             @endif
 
                             <div class="timeline__element--dot"></div>
@@ -41,7 +43,9 @@
                             @endif
 
                             @if($loop->even)
-                                <div class="timeline__element--spacer" style="background-image: url(/storage/{{ $website->screenshot }});"></div>
+                                <div class="timeline__element--image">
+                                    <div class="screenshot" style="background-image: url(/storage/{{ $website->screenshot }});"></div>
+                                </div>
                             @else
                                 <div class="timeline__element--info">
                                     <h1>{{ $website->title }}</h1>
