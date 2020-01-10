@@ -4,18 +4,19 @@ FROM php:7.4.1
 
 RUN chown -R laravel:laravel /home/laravel/app
 
-RUN mkdir -p /home/laravel/app/node_modules
-RUN mkdir -p /home/laravel/app/vendor
-
 WORKDIR /home/laravel/app
 
-COPY package*.json ./
-COPY composer*.json ./
+COPY --chown=laravel:laravel . .
 
 RUN composer install && npm install
 RUN composer global require laravel/installer
 
-COPY --chown=laravel:laravel . .
+RUN php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+RUN php artisan key:generate
+RUN touch database/database.sqlite
+RUN php artisan storage:link
+RUN php artisan migrate
 
 USER laravel
 
