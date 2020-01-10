@@ -6,7 +6,22 @@
         {
             "type": "shell",
             "label": "Laravel: Serve app",
-            "command": "php artisan serve",
+            "command": "php artisan serve --host=0.0.0.0 --port=80",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Laravel: Migrate database",
+            "command": "php artisan migrate",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Laravel: Regenerate languages",
+            "command": "php artisan translatable:export pl && php artisan translatable:export en",
+            "windows": {
+                "command": "php artisan translatable:export pl & php artisan translatable:export en"
+            },
             "problemMatcher": []
         },
         {
