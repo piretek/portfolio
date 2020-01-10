@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Website;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class PortfolioController extends Controller
 {
@@ -47,6 +48,11 @@ class PortfolioController extends Controller
 
         if (!is_null(request('screenshot'))) {
             $ssPath = request('screenshot')->store('uploads', 'public');
+
+            $fileinfo = pathinfo(public_path("storage/{$ssPath}"));
+            $image = Image::make(public_path("storage/{$ssPath}"))->resize(447, 251);
+
+            $image->save($fileinfo['dirname']."/".$fileinfo['filename']."-447-251.".$fileinfo['extension']);
         }
         else {
             $ssPath = null;
@@ -84,6 +90,11 @@ class PortfolioController extends Controller
 
             Storage::delete($website->screenshot);
             $ssPath = request('screenshot')->store('uploads', 'public');
+
+            $fileinfo = pathinfo(public_path("storage/{$ssPath}"));
+            $image = Image::make(public_path("storage/{$ssPath}"))->resize(447, 251);
+
+            $image->save($fileinfo['dirname']."/".$fileinfo['filename']."-447-251.".$fileinfo['extension']);
 
             $data['screenshot'] = $ssPath;
             $website->screenshot = $data['screenshot'];

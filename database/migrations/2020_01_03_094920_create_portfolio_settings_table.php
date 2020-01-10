@@ -16,7 +16,8 @@ class CreatePortfolioSettingsTable extends Migration
         Schema::create('portfolio_settings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('subtitle');
+            $table->string('subtitle_en');
+            $table->string('subtitle_pl');
             $table->string('mail');
             $table->timestamps();
         });

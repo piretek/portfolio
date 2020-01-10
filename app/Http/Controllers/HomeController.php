@@ -10,37 +10,46 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        $websites = Website::all();
-        $setting = PortfolioSetting::find(1);
+        $websites = Website::orderBy('created_at', 'DESC')->get();
+
         $settings = PortfolioSetting::all();
 
-        $title = Cache::remember('psettings.title',
+        if (count($settings) == 0) {
+
+            $setting = new PortfolioSetting;
+
+            $setting->title = "Piotr Czarnecki";
+            $setting->subtitle_en = "I don't know :)";
+            $setting->subtitle_pl = "Nie wiem :)";
+            $setting->mail = "piretek@piretek.pro";
+
+            $setting->save();
+        }
+
+        $setting = PortfolioSetting::find(1);
+
+        $title = Cache::remember('ProfileSettings.title',
             now()->addDays(7),
-            function() use ($settings) {
-                return $settings['title'];
+            function() use ($setting) {
+                return $setting->title;
             }
         );
 
-        $subtitle = Cache::remember('psettings.subtitle',
+        $subtitle = Cache::remember('ProfileSettings.subtitle',
             now()->addDays(7),
-            function() use ($settings) {
-                return $settings['subtitle'];
+            function() use ($setting) {
+
+                if ( App::isLocale('pl') ) {
+                    return $setting->subtitle_pl;
+                }
+
+                return $setting->subtitle_en;
             }
         );
 

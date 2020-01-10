@@ -15,7 +15,7 @@
                     @endif
                     <div class="card mb-4">
                         <div class="website_card">
-                            <div class="image" style="background-image: url('{{ asset("/storage/".$website->screenshot) }}');"></div>
+                            <div class="image" style="background-image: url('{{ $website->screenshot() }}');"></div>
                             <div class="other_info">
                                 <div class="title"><a href="{{ $website->url }}" target="_blank">{{ $website->title }}</a></div>
                                 <div class="description">{{ $website->desc }}</div>

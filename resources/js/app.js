@@ -6,27 +6,21 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+let settings = { delay: 300, interval: 300, distance: '20px' };
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+let left = [
+    '.timeline__element--image:nth-child(1)',
+    '.timeline__element--info:nth-child(1)',
+];
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+let right = [
+    '.timeline__element--image:nth-child(4)',
+    '.timeline__element--info:nth-child(4)',
+    '.timeline__element--image:nth-child(3)',
+    '.timeline__element--info:nth-child(3)',
+];
 
-Vue.component('contact-form', require('./components/ContactFormComponent.vue').default);
+ScrollReveal().reveal(left.join(', '), { ...settings, origin: 'left' });
+ScrollReveal().reveal(right.join(', '), { ...settings, origin: 'right' });
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 
-const app = new Vue({
-    el: '#app',
-});

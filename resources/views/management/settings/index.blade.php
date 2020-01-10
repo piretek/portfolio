@@ -45,11 +45,23 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="subtitle" class="col-md-4 col-form-label text-md-right">{{ __('Sub title') }}</label>
+                                        <label for="subtitle_en" class="col-md-4 col-form-label text-md-right">{{ __('Subtitle English') }}</label>
 
                                         <div class="col-md-6">
-                                            <input type="text" id="subtitle" class="form-control @error('subtitle') is-invalid @enderror" name="subtitle" value="{{ $setting->subtitle }}" autofocus>
-                                            @error ('subtitle')
+                                            <input type="text" id="subtitle_en" class="form-control @error('subtitle_en') is-invalid @enderror" name="subtitle_en" value="{{ $setting->subtitle_en }}" autofocus>
+                                            @error ('subtitle_en')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="subtitle_pl" class="col-md-4 col-form-label text-md-right">{{ __('Subtitle Polish') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input type="text" id="subtitle_pl" class="form-control @error('subtitle_pl') is-invalid @enderror" name="subtitle_pl" value="{{ $setting->subtitle_pl }}" autofocus>
+                                            @error ('subtitle_pl')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('index');
+Route::get('/', 'HomeController@index')->name('index')->middleware('lang');
 
 Auth::routes();
 
-Route::get('/portfolio', 'PortfolioController@websites')->name('portfolio.index');
+Route::get('/portfolio', 'PortfolioController@websites')->name('portfolio.index')->middleware('lang');
 
 Route::get('/portfolio/create', 'PortfolioController@create')->name('portfolio.create');
 
-Route::get('/portfolio/{website}', 'PortfolioController@website')->name('portfolio.show');
+Route::get('/portfolio/{website}', 'PortfolioController@website')->name('portfolio.show')->middleware('lang');
 
 Route::put('/portfolio/{website}', 'PortfolioController@modify')->name('portfolio.edit');
 
@@ -29,6 +29,10 @@ Route::delete('/portfolio/{website}', 'PortfolioController@destroy')->name('port
 
 // Prof. settings
 
-Route::get('/ust-portfolio', 'PortfolioSettingsController@index')->name('settings-portfolio.index');
+Route::get('/ust-portfolio', 'PortfolioSettingsController@index')->name('settings-portfolio.index')->middleware('lang');
 
 Route::patch('/ust-portfolio', 'PortfolioSettingsController@modify')->name('settings-portfolio.store');
+
+// Contact
+
+Route::post('/contact', 'ContactFormController@store');

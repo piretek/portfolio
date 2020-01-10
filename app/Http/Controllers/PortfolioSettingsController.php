@@ -25,8 +25,9 @@ class PortfolioSettingsController extends Controller
         $data = request()->validate([
             'id' => 'integer:required',
             'title' => '',
-            'subtitle' => '',
-            'mail' => 'email',
+            'subtitle_en' => '',
+            'subtitle_pl' => '',
+            'mail' => 'required|email',
         ]);
 
         $setting = PortfolioSetting::findOrFail($data['id']);
