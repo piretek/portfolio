@@ -23,4 +23,19 @@ let right = [
 ScrollReveal().reveal(left.join(', '), { ...settings, origin: 'left' });
 ScrollReveal().reveal(right.join(', '), { ...settings, origin: 'right' });
 
+(function() {
+	if (!localStorage.getItem('cookie')) {
+		document.body.innerHTML += '\
+		<div class="cookie">\
+			This site uses cookies. By continuing to use this website, you agree to their use. \
+			<div class="understand">I Understand</div>\
+		</div>\
+		';
 
+        document.querySelector('.cookie .understand').addEventListener('click', (e) => {
+			e.preventDefault();
+			document.querySelector('.cookie').remove();
+			localStorage.setItem('cookie', true);
+        });
+	}
+})();

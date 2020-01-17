@@ -11374,6 +11374,23 @@ body {
   color: #212121;
 }
 
+.cookie {
+  width: 25%;
+  position: fixed;
+  padding: 20px;
+  right: 20px;
+  bottom: 20px;
+  background-color: #000;
+  color: #FFF;
+  text-align: center;
+  z-index: 99999;
+}
+
+.cookie .understand {
+  color: #CCCCCC;
+  cursor: pointer;
+}
+
 .grecaptcha-badge {
   visibility: collapse !important;
 }
@@ -11594,6 +11611,10 @@ footer .columns .column .copyright p {
 }
 
 @media screen and (max-width: 1024px) {
+  .cookie {
+    width: 35%;
+  }
+
   .timeline .timeline__element--image .screenshot {
     width: 267px;
     height: 150px;
@@ -11609,6 +11630,10 @@ footer .columns .column .copyright p {
 }
 
 @media screen and (max-width: 768px) {
+  .cookie {
+    width: 45%;
+  }
+
   .timeline {
     margin-top: 0;
   }
@@ -11649,6 +11674,12 @@ footer .columns .column .copyright p {
 }
 
 @media screen and (max-width: 576px) {
+  .cookie {
+    width: 100%;
+    right: 0;
+    bottom: 0;
+  }
+
   .inner-wrapper {
     padding: 50px 20px;
   }
