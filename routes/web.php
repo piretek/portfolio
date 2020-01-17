@@ -13,6 +13,16 @@
 
 Route::get('/', 'HomeController@index')->name('index')->middleware('lang');
 
+Route::prefix('pl')->group(function () {
+
+    Route::get('/', 'HomeController@index')->name('lang.index')->middleware('lang');
+});
+
+Route::prefix('en')->group(function () {
+
+    Route::get('/', 'HomeController@index')->name('lang.index')->middleware('lang');
+});
+
 Auth::routes();
 
 Route::get('/portfolio', 'PortfolioController@websites')->name('portfolio.index')->middleware('lang');

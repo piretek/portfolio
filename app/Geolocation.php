@@ -10,7 +10,14 @@ class Geolocation {
     public $language;
 
     public function __construct( $ignore_cache = false ) {
-        $cache_id = 'lang-'.str_replace('.','',Request::ip());
+        $cache_id = 'lang-'.str_replace('.','', Request::ip());
+
+        $req_lang = strtolower(substr(Request::path(), 0, 3));
+
+        if (in_array( $req_lang, ['pl', 'en'])) {
+            $this->language = strtolower( substr($req_lang, 0, 2) );
+            return null;
+        }
 
         if ($ignore_cache) {
             $this->language = strtolower( $this->request() );
