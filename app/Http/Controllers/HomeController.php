@@ -45,7 +45,7 @@ class HomeController extends Controller
             now()->addDays(7),
             function() use ($setting) {
 
-                if ( App::isLocale('pl') ) {
+                if ( \App::isLocale('pl') ) {
                     return $setting->subtitle_pl;
                 }
 
