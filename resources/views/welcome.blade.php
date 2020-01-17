@@ -4,6 +4,24 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="alternate" hreflang="en" href="{{ url()->full()."/en" }}" />
+        <link rel="alternate" hreflang="pl" href="{{ url()->full()."/pl" }}" />
+
+        <meta name="description" content="{{ $subtitle }}" />
+
+        <meta property="og:title" content="{{ "Portfolio Piotr Czarnecki" }}" />
+        <meta property="og:url" content="{{ url()->full().'/images/me-og.jpg' }}" />
+        <meta property="og:type "content="website" />
+        <meta property="og:description" content="{{ $subtitle }}" />
+        <meta property="og:image" content="{{ url()->full() }}" />
+        <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}" />
+
+        <meta property="og:locale:alternate" content="{{ "pl" }}" />
+        <meta property="og:locale:alternate" content="{{ "en" }}" />
+
+        <meta name="robots" content="all" />
+        <meta name="googlebot" content="all" />
+
         <title>{{ $title.__(' - my portfolio') }}</title>
 
         <!-- Fonts -->
@@ -49,7 +67,7 @@
                                     <div class="timeline__element--info">
                                         <h1>{{ $website->title }}</h1>
                                         <p>{{ $website->description() }}</p>
-                                        <a href="{{ $website->url }}" target="_blank"><button class='btn btn-light'>{{ __('Open website') }}</button></a>
+                                        <a href="{{ $website->url }}" rel="nofollow" target="_blank"><button class='btn btn-light'>{{ __('Open website') }}</button></a>
                                     </div>
                                 </div>
                             @endforeach
