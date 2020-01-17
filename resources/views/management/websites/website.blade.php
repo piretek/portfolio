@@ -18,7 +18,7 @@
                             <div class="image" style="background-image: url('{{ $website->screenshot() }}');"></div>
                             <div class="other_info">
                                 <div class="title"><a href="{{ $website->url }}" target="_blank">{{ $website->title }}</a></div>
-                                <div class="description">{{ $website->desc }}</div>
+                                <div class="description">{{ $website->description() }}</div>
                                 <div class="used_tools">{{ $website->used_tools }}</div>
                             </div>
                         </div>

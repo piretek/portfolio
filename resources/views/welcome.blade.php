@@ -15,6 +15,10 @@
 
         <script src="https://kit.fontawesome.com/263a4f6498.js" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            let cookie_consent = '{{ __('This site uses cookies. By continuing you agree to use them.') }}';
+            let cookie_agree = '{{ __('Ok, close this.') }}';
+        </script>
     </head>
     <body>
         <div class="wrapper">
@@ -44,7 +48,7 @@
 
                                     <div class="timeline__element--info">
                                         <h1>{{ $website->title }}</h1>
-                                        <p>{{ $website->desc }}</p>
+                                        <p>{{ $website->description() }}</p>
                                         <a href="{{ $website->url }}" target="_blank"><button class='btn btn-light'>{{ __('Open website') }}</button></a>
                                     </div>
                                 </div>

@@ -41,7 +41,8 @@ class PortfolioController extends Controller
         $data = request()->validate([
             'title' => 'required',
             'url' => 'required',
-            'desc' => 'required',
+            'desc_pl' => 'required',
+            'desc_en' => 'required',
             'used_tools' => 'required',
             'screenshot' => 'image:required'
         ]);
@@ -61,7 +62,8 @@ class PortfolioController extends Controller
         $created_website = auth()->user()->websites()->create([
             'title' => $data['title'],
             'url' => $data['url'],
-            'desc' => $data['desc'],
+            'desc_pl' => $data['desc_pl'],
+            'desc_en' => $data['desc_en'],
             'used_tools' => $data['used_tools'],
             'screenshot' => $ssPath,
         ]);
@@ -76,14 +78,16 @@ class PortfolioController extends Controller
         $data = request()->validate([
             'title' => 'required',
             'url' => 'required',
-            'desc' => 'required',
+            'desc_pl' => 'required',
+            'desc_en' => 'required',
             'used_tools' => 'required',
             'screenshot' => 'image'
         ]);
 
         $website->title = $data['title'];
         $website->url = $data['url'];
-        $website->desc = $data['desc'];
+        $website->desc_pl = $data['desc_pl'];
+        $website->desc_en = $data['desc_en'];
         $website->used_tools = $data['used_tools'];
 
         if (!is_null(request('screenshot'))) {

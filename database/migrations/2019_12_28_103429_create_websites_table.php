@@ -19,7 +19,8 @@ class CreateWebsitesTable extends Migration
             $table->string('screenshot')->nullable();
             $table->string('title');
             $table->string('url');
-            $table->text('desc');
+            $table->text('desc_en');
+            $table->text('desc_pl');
             $table->string('used_tools');
             $table->timestamps();
 

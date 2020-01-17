@@ -37033,12 +37033,7 @@ ScrollReveal().reveal(right.join(', '), _objectSpread({}, settings, {
 
 (function () {
   if (!localStorage.getItem('cookie')) {
-    document.body.innerHTML += '\
-		<div class="cookie">\
-			This site uses cookies. By continuing to use this website, you agree to their use. \
-			<div class="understand">I Understand</div>\
-		</div>\
-		';
+    document.body.innerHTML += "<div class=\"cookie\">".concat(cookie_consent, " <div class=\"understand\">").concat(cookie_agree, "</div></div>");
     document.querySelector('.cookie .understand').addEventListener('click', function (e) {
       e.preventDefault();
       document.querySelector('.cookie').remove();
