@@ -7,22 +7,21 @@
         <link rel="alternate" hreflang="en" href="{{ url()->full()."/en" }}" />
         <link rel="alternate" hreflang="pl" href="{{ url()->full()."/pl" }}" />
 
+        <meta name="robots" content="all" />
+        <meta name="googlebot" content="all" />
         <meta name="description" content="{{ $subtitle }}" />
 
-        <meta property="og:title" content="{{ "Portfolio Piotr Czarnecki" }}" />
-        <meta property="og:url" content="{{ url()->full().'/images/me-og.jpg' }}" />
+        <meta property="og:title" content="{{ "Portfolio ".$title }}" />
+        <meta property="og:url" content="{{ url()->full() }}" />
         <meta property="og:type "content="website" />
         <meta property="og:description" content="{{ $subtitle }}" />
-        <meta property="og:image" content="{{ url()->full() }}" />
-        <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}" />
+        <meta property="og:image" content="{{ url()->full().'/images/me-og.jpg' }}" />
+        <meta property="og:locale" content="{{ app()->getLocale() }}" />
 
         <meta property="og:locale:alternate" content="{{ "pl" }}" />
         <meta property="og:locale:alternate" content="{{ "en" }}" />
 
-        <meta name="robots" content="all" />
-        <meta name="googlebot" content="all" />
-
-        <title>{{ $title.__(' - my portfolio') }}</title>
+        <title>{{ $title.__(' - portfolio') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
