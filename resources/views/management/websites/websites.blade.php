@@ -32,7 +32,7 @@
                         @foreach($websites as $website)
                             <div class="card margin">
                                 <div class="website_card">
-                                    <div class="image" style="background-image: url('{{ $website->screenshot() }}');"></div>
+                                    <div class="image" style="background-image: url('{{ $website->screenshot(true) }}');"></div>
                                     <div class="other_info">
                                         <div class="title"><a href="{{ $website->url }}" target="_blank">{{ $website->title }}</a></div>
                                         <div class="description">{{ $website->description() }}</div>
